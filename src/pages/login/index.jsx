@@ -1,13 +1,13 @@
 import React from 'react'
 import MainContainer from '../../components/common/mainContainer'
-import SignUp from '../../components/signUp'
+import Login from '../../components/login'
 
-const SignUpPage = () => {
+const LoginPage = () => {
   return (
     <MainContainer>
-        <SignUp/>
+        <Login/>
     </MainContainer>
   )
 }
 
-export default SignUpPage
+export default LoginPage

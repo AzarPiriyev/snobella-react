@@ -72,7 +72,7 @@ const Products = () => {
             <Filter onFilterChange={handleFilterChange} />
             <div className='grid grid-cols-2 gap-[20px]'>
                 {filteredData.map((item) => (
-                   <Link to={`/product/${item.id}`}><div key={item.id} className='pt-[11px] pb-[28px] px-[24px] bg-[#F9F9F9]'>
+                   <Link to={`/product/${item.id}`} key={item.id}><div key={item.id} className='pt-[11px] pb-[28px] px-[24px] bg-[#F9F9F9]'>
                         <div className='flex gap-[23px] pl-[47px]'>
                             <img src={item.image} alt={item.title} className='h-[234px] w-[234px] mb-[15px]' />
                             <img src="/src/assets/icons/heart.svg" alt="heart" className='mt-[-200px]' />
