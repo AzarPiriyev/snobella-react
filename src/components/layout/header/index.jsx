@@ -1,9 +1,12 @@
+"use client"
 import React from 'react';
 import MainContainer from '../../common/mainContainer';
 import { Link } from 'react-router-dom';
 import { useStore } from '../../../store';
 
 const Header = () => {
+
+  const {productCount} = useStore();
   const { isLogin, setFields } = useStore();
 
   const navElements = [
@@ -67,7 +70,7 @@ const Header = () => {
             <Link to={'/Basket'}>
               <div className='flex gap-[10px] cursor-pointer'>
                 <img src="/src/assets/icons/basket.svg" alt="basket" className='w-[24px] h-[24px]' />
-                <p className='text-[14px] font-medium text-[#2E2E2E]'>Basket</p>
+                <p className='text-[14px] font-medium text-[#2E2E2E]'>Basket <span>{productCount}</span></p>
               </div>
             </Link>
           </div>

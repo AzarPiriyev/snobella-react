@@ -1,8 +1,23 @@
+"use client"
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getProductsById } from '../../../../api/service';
+import { useStore } from '../../../store';
 
 const ProductDetail = () => {
+  const {productCount, customCart, setFields} = useStore();
+
+  const addToCart = (id) => {
+    console.log(id);
+
+    const newCount = productCount +1;
+    const newCart = [...customCart, id];
+    setFields({
+      customCart: newCart,
+      productCount: newCount});
+  };
+
+ 
 
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
@@ -42,8 +57,8 @@ const ProductDetail = () => {
                 <p className='text-[14px] font-normal text-[#1D1D1D] '>Shoulder Bags</p>
         </div>
        
-        <div className='flex justify-between mb-[100px h-[473px] h-[456px]'>
-            <div className='flex gap-[8px] pt-[24px] pl-[56px] pb-[56px] pr-[24px]'>
+        <div className='flex justify-between mb-[100px] '>
+            <div className='flex gap-[8px] pt-[24px] pl-[56px] pb-[56px] pr-[24px] h-[473px] w-[456px]'>
             <img src={product.image} alt="bag" />
             <img src="/src/assets/icons/heart.svg" alt="heart" className=' h-[28px] w-[28px]' />
             </div>
@@ -59,7 +74,7 @@ const ProductDetail = () => {
               </div>
 
               <div className=' mb-[32px]'>
-               <p className='text-[30px] font-medium'>{product.price}</p>
+               <p className='text-[30px] font-medium'>${product.price}</p>
               </div>
 
               <div className='flex gap-[10px] border border-black w-[70px] py-[6px] px-[6px] rounded-[3px] justify-center mb-[32px]'>
@@ -89,7 +104,7 @@ const ProductDetail = () => {
               </div>
 
               <div className='flex justify-between'>
-                <button className='py-[12px] px-[74px] border border-[#DF4244] bg-[#DF4244] text-white text-[16px] font-medium rounded-[8px]'>Add to card</button>
+                <button className='py-[12px] px-[74px] border border-[#DF4244] bg-[#DF4244] text-white text-[16px] font-medium rounded-[8px]' onClick={()=>{addToCart(product.id);}}>Add to card</button>
                 <button className='py-[12px] px-[63px] border border-[#212121]  text-[#212121] text-[16px] font-medium rounded-[8px]'>Cash payment</button>
               </div>
             </div>
