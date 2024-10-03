@@ -61,7 +61,7 @@ const Header = () => {
                 </div>
               </Link>
             )}
-            <Link to={'/WishlistPage'}>
+            <Link to={'/wishlist'}>
               <div className='flex gap-[10px] cursor-pointer'>
                 <img src="/src/assets/icons/wishlist.svg" alt="wish" className='w-[24px] h-[24px]' />
                 <p className='text-[14px] font-medium text-[#2E2E2E]'>Wishlist</p>
@@ -70,7 +70,7 @@ const Header = () => {
             <Link to={'/Basket'}>
               <div className='flex gap-[10px] cursor-pointer'>
                 <img src="/src/assets/icons/basket.svg" alt="basket" className='w-[24px] h-[24px]' />
-                <p className='text-[14px] font-medium text-[#2E2E2E]'>Basket <span>{productCount}</span></p>
+                <p className='text-[14px] font-medium text-[#2E2E2E]'>Basket  <span className='border border-[#007878] bg-[#007878] text-white py-[2px] px-[7px] rounded-[50%]'>{productCount}</span></p>
               </div>
             </Link>
           </div>

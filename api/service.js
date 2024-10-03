@@ -33,3 +33,9 @@ export const getProductsById = async (id) => {
     const products = await response.json();
     return products;
 };
+
+export const getFeaturedById = async () => {
+    const response = await fetch(`http://localhost:3000/Featured-Products/${id}`);
+    const featured = await response.json();
+    return featured;
+};

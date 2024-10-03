@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Total = () => {
+const Total = ({ totalPrice }) => {
   return (
     <div className='mb-[100px]'>
       <div className='py-[32px] px-[24px] w-[360px] border rounded-[8px] border-[#F9F9F9] bg-[#F9F9F9] mb-[23px]'>
         <div className='flex justify-between mb-[12px]'>
             <p className='text-[16px] font-normal text-[#212121]'>Your subtotal</p>
-            <p className='text-[16px] font-normal text-[#212121]'>US $20.00</p>
+            <p className='text-[16px] font-normal text-[#212121]'>{ totalPrice }</p>
         </div>
 
         <div className='flex justify-between mb-[20px]'>
@@ -16,7 +16,7 @@ const Total = () => {
 
         <div className='flex justify-between mb-[24px]'>
             <p className='text-[18px] font-medium text-[#212121]'>Total</p>
-            <p className='text-[18px] font-medium text-[#212121]'>US $20.00</p>
+            <p className='text-[18px] font-medium text-[#212121]'>{totalPrice}</p>
         </div>
 
         <hr className='mb-[22px]' />

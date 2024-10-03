@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { getProducts } from '../../../../api/service';
 import Filter from '../filter';
@@ -68,7 +69,7 @@ const Products = () => {
     }
 
     return (
-        <div className="flex">
+        <div className="flex gap-[100px]">
             <Filter onFilterChange={handleFilterChange} />
             <div className='grid grid-cols-2 gap-[20px]'>
                 {filteredData.map((item) => (

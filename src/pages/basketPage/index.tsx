@@ -11,7 +11,7 @@ const BasketPage = () => {
         <Shopping/>
         <div className='flex justify-between'>
         <Cart/>
-        <Total/>
+        
         </div>
     </MainContainer>
   )
